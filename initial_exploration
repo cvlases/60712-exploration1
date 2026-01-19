@@ -1,0 +1,21 @@
+Beginning to work in the hex editor.
+
+There are only a few places to edit within the header without totally corrupting the file, and I haven't quite figured that out yet. 
+
+Within the body, I've been adjusting a mix of large blocks of the hex data and moving it to different places in the image, hoping to get a sort of glitch effect. I'm getting an idea of the size needed. I tried word insertion, but so far the difference isn't noticeable (maybe I'll need to write a script for these additions en masse?). I'm disappointed in the amount of grey, and have to figure out why that is happening. I've read all about DCT, but haven't really incorporated the mathematics into this initital exploration just yet. I prefer the larger chunks (like mountains 4). This may be harder than I thought!
+
+Resources I've used today:
+- Explanations:
+- - https://www.youtube.com/watch?v=Tq-Ly_Gz5ws
+- https://graphicdesign.stackexchange.com/questions/116532/is-there-any-method-to-deliberately-digitally-corrupt-an-image
+- http://datamoshing.com/2016/06/15/how-to-glitch-jpg-images-with-data-corruption/
+
+
+Inspo from other artists:
+- https://faultlore.com/glitch/
+- https://dataerase.neocities.org/about
+- https://www.youtube.com/watch?v=fAxHlLK3Oyk
+- https://beyondresolution.info/MPEG-Dear-mr-Compression
+- https://www.nytimes.com/2017/12/15/arts/design/hito-steyerl.html
+- https://www.e-flux.com/journal/32/68260/the-spam-of-the-earth-withdrawal-from-representation
+
