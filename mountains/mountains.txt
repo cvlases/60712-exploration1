@@ -1,0 +1,25 @@
+After reading about JPEG glitching and watching some tutorials, I started by experimenting
+with a film photo from this past summer of some cows resting in the mountains. I'd read that 
+by deleting sections of the hex code of a JPEG's file data (after the header part), and then
+copying those sections elsewhere in the image creates a unique effect. I was not sure how
+much change was needed to make the intended look, so I started small. 
+
+I read that editing the header of the image could lead to big problems, and could corrupt
+the image to the point where it wouldn't compile at all. I also learned that the start of 
+the raw data, and the end of header part of the file is marked with the hex code "FF DA." 
+
+In mountains1.jpeg, I somewhat randomly copied sections of hex code and moved it to other
+places in the file. The effect was some horizontal streaks across the image, often becoming
+grey, rather than the warping/glitching effect I was hoping for.
+
+In mountains2.jpeg, I tried smaller segments of hex code more often, which led to a similar
+horiontal streak effect. Some of the streaks looked like an interesting image translation, 
+but most were greyed out color blocks. I read that the greyed pixels meant that there was
+some sort of curruption that led to the JPEG not being able to compile at all. I looked to
+see if there was a certain hex code that caused the issue or a placement, but it felt random.
+
+In mountains3.jpeg and mountains4.jpeg, I tried moving larger chunks of the hex file in different places. This 
+worked better than the smaller changes -- while there was still some grey, the swaping of 
+sections of image were somewhat recognizeable. It gives the appearance of the image being "split."
+
+
