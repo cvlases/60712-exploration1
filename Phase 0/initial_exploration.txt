@@ -1,5 +1,3 @@
-UPDAT 1/19
-
 Beginning to work in the hex editor.
 
 There are only a few places to edit within the header without totally corrupting the file, and I haven't quite figured that out yet. 
