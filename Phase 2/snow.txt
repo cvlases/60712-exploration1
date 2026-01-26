@@ -1,0 +1,23 @@
+I wanted to see if the same horizonatal line effects would happen for a different image than 
+the mountains one I started with. I used a new image, this time of snowy mountains I took last
+January to see what the same process might look like. 
+
+It did have a similar effect as earlier, streaking the image horizontally (see snow2.jpeg).
+
+I'd been reading about Direct Cosine Transformations (DCTs), and since I couldn't seem to 
+reason out a pattern to the maddness, I sized the image quality down significantly, reducing
+its number of pixels. 
+
+I did a similar pixel replacement methon on small-snow-1.jpeg, and was pleased to see the 
+effects of the DCT when the pixels were so much larger in comparison to the whole image.
+
+And then, with small-snow-2.jpg, I added to thte size of the file by randomly frequently
+adding the hex value "20202020 20202020 206C6F76 65202020 20202020 20202020", which looks like
+"         love           " in ASCII (the spaces to help me find my edits easier).
+
+While I liked the look of both abstractions, it felt like it was still random and hard to control.
+I went back to the drawing board and read a lot from other glitch artists. In one youtube 
+tutorial, I learned that the horizontal streak effect often occurs because the image isn't 
+big enough. With really large images (and thus super tiny pixels), the effects appear really
+different. I didn't have any images the size the video suggested, so I attempted to size up an 
+image I already had that was pretty big. 
