@@ -1,0 +1,44 @@
+Now with a resized, large 6400 px x 6400 px image, I started following my (now customary)
+practice of randomly moving about sections of the hex file within the image. 
+
+The pixels seemed to grey out all the time, and grey everything that followed it.
+This seemed like going backwards! 
+
+Frustrated, I just started deleting at random sections of the image. This ended up leading
+to the most interesting effect yet! The image started to split and move in a way I liked,
+and it became clear that some bits moved the image, while others changed its coloring or 
+luminance. It still was finicky -- if I deleted the wrong values, the image would go 
+completely grey again, so I had to carefully pick my way through the file. See hat copy.jpg.
+
+To see what just a singular deletion of a bit might look like, check out hat copy - singular deletion.jpeg
+
+In the next iteration, I honed in more on specific bits to get the color and movement 
+effect to my liking, often deleting then re-adding, moving a few hex codes to the right or
+left of the area I was working on, and then continuing again. Documentd in hat copy 2.jpg.
+
+In one of the tutorials I watched, the artist recommended making a minor change to the same
+bit over and over. At random, I pickked "02" and replaced nearly every hex with "33" instead. 
+I figured that would be a significant enough numerical change that the effects would be 
+noticeable. Indeed they were! Not every '02' is replaced though -- some of them would just 
+immediately cause the rest of the file to grey out, so I would not change that particular
+instance and then move to the next one. This was incredibly painstaking given that my 
+hex editor was not a live editor, so I one by one made the changes. I would really not
+recommend this to anyone, not even my worst enemy. And now I think I have a twitch
+in my hand from doing this. 
+
+I do think I have a better understanding of how color is coded into JPEG files with this
+experiment, as luminance and chrominance seem to be the final product of the abstraction.
+I included screenshots (4a and 4b) that show different changes of what the image looked like
+at different stages in the process.
+
+Unfortunately, I think the process of changing these bits, or maybe my choice in replacement
+was too dramatic, because the visual came out extremely abstracted. I'd like to explore that more,
+but the process was a slog and I haven't worked up the courage for Round Two.
+
+Now that I had tried deletion and replacement, I wanted to try addition with the same
+image. See: hat copy 4. Using the bitwise representation of the word "ephemeral," I 
+randomly and frequently added to the file. The color look changes drastically between VSCode 
+photo viewer, and MacOS's Preview.
+
+
+

@@ -19,8 +19,17 @@ but most were greyed out color blocks. I read that the greyed pixels meant that 
 some sort of curruption that led to the JPEG not being able to compile at all. I looked to
 see if there was a certain hex code that caused the issue or a placement, but it felt random.
 
-In mountains3.jpeg and mountains4.jpeg, I tried moving larger chunks of the hex file in different places. This 
-worked better than the smaller changes -- while there was still some grey, the swaping of 
+In mountains3.jpeg and mountains4.jpeg, I tried moving larger chunks of the hex file in different 
+places. This worked better than the smaller changes -- while there was still some grey, the swaping of 
 sections of image were somewhat recognizeable. It gives the appearance of the image being "split."
 
+In later itereations, I also attemped to add some pattern and consistency to the process
+by writing a few short scripts to parse the image data and make changes after a set number of hex 
+codes. Unfortunately, like I experienced with the manual process, there didn't seem to be a 
+noticeable pattern to what broke the file or turned the pixels grey. Trying to use the consistent
+looping pattern only seemed to break my files.
 
+Another note: Interestingly, the image viewer (preview on my mac), versus the one in VSCode,
+versus the one in the Github GUI makes all of these pictures look completely different. 
+I looked into this a little, and it appears that a lot of angry people on reddit think 
+little of Mac's Preview. 

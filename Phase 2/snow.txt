@@ -4,6 +4,9 @@ January to see what the same process might look like.
 
 It did have a similar effect as earlier, streaking the image horizontally (see snow2.jpeg).
 
+I again tried using a script to automate the process, with no success. I figured that if I could
+manually figure out how to make one imale look the way I wanted, I could then automate later.
+
 I'd been reading about Direct Cosine Transformations (DCTs), and since I couldn't seem to 
 reason out a pattern to the maddness, I sized the image quality down significantly, reducing
 its number of pixels. 
