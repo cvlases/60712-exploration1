@@ -101,9 +101,7 @@ In the next iteration, I honed in more on specific bits to get the color and mov
 
 ![hat](Phase_3/hatcopy2.jpg)
 
-![hat](Phase_3/hatcopy4-Mac.png)
 
-![hat](Phase_3/hatcopy4-VSCode.png)
 
 
 ## The painful bit replacement experiment
@@ -117,16 +115,31 @@ Indeed they were! Not every `02` is replaced though — some of them would just 
 
 I do think I have a better understanding of how color is coded into JPEG files with this experiment, as luminance and chrominance seem to be the final product of the abstraction. I included screenshots (4a and 4b) that show different changes of what the image looked like at different stages in the process.
 
+Earlier stages:
+![hat](Phase_3/hat_copy-4a.png)
+
+Midway through:
+![hat](Phase_3/hat_copy-4b.png)
+
 Unfortunately, I think the process of changing these bits, or maybe my choice in replacement was too dramatic, because the visual came out extremely abstracted. I'd like to explore that more, but the process was a slog and I haven't worked up the courage for Round Two.
 
-![snow](Phase_3/hat_copy-4a.png)
-![snow](Phase_3/hat_copy-4b.png)
+![hat](Phase_3/hatcopy3.jpg)
+
+
 
 ## Addition method: "ephemeral"
 
 Now that I had tried deletion and replacement, I wanted to try addition with the same image. See: hat copy 4. Using the bitwise representation of the word "ephemeral," I randomly and frequently added to the file. The color look changes drastically between VSCode photo viewer and MacOS's Preview.
 
-![hat](Phase_3/hatcopy3.jpg)
+VSCode View:
+
+![hat](Phase_3/hatcopy4-VSCode.png)
+
+Mac Preview:
+
+![hat](Phase_3/hatcopy4-Mac.png)
+
+
 
 ## Grid decomposition experiment
 
