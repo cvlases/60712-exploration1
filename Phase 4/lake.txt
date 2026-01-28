@@ -1,0 +1,11 @@
+The next thing that I did was working within smaller jpgs.
+
+So I took an image I took of a lake sunset, divided it into 20 smaller images using a 5 by 4 grid. Then I 
+sized each of the gridded images to be 32 by 32 pixels.
+
+Then I located the start of the data file (end of the header) with the hex code "FF DA"
+
+I deleted 2 bytes from the same place in each image, (10 bytes after the end of the header)
+
+THen i replaced the images back. on the grid o get a final product. it was inrteresting that some 
+didnt change at all and other were totally corrupted
