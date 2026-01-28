@@ -156,8 +156,13 @@ Future work: I want to learn the `ffmpeg` tool. This is a powerful command line 
 
 **Thank you to the creators of these resources for explanations!**
 - [ComputerPhile: How JPEG works](https://www.youtube.com/watch?v=Tq-Ly_Gz5ws)
+- [More JPEG Explanations](https://cgjennings.ca/articles/jpeg-compression/)
 - [Stack Exchange: Methods to deliberately corrupt images](https://graphicdesign.stackexchange.com/questions/116532/is-there-any-method-to-deliberately-digitally-corrupt-an-image)
 - [Data Moshing tutorial](http://datamoshing.com/2016/06/15/how-to-glitch-jpg-images-with-data-corruption/)
+- [Data Bending Tutorial](https://famst109ga.wordpress.com/code/)
+- [Hex Editing](https://www.youtube.com/watch?v=VrU_uleQTm8)
+- [Glitch Corruptions](https://artblueprint.substack.com/p/the-beautiful-corruptions-of-glitch)
+
 
 **And thank you for the artitsts that inspired my exploration. I am even more in awe of your creations now.**
 - [Faultlore](https://faultlore.com/glitch/)
@@ -166,6 +171,6 @@ Future work: I want to learn the `ffmpeg` tool. This is a powerful command line 
 - [Beyond Resolution: MPEG Dear Mr. Compression](https://beyondresolution.info/MPEG-Dear-mr-Compression)
 - [Hito Steyerl - NY Times](https://www.nytimes.com/2017/12/15/arts/design/hito-steyerl.html)
 - [The Spam of the Earth - e-flux](https://www.e-flux.com/journal/32/68260/the-spam-of-the-earth-withdrawal-from-representation)
----
+- [Alvin Lucier: I am sitting in a room](https://www.youtube.com/watch?v=fAxHlLK3Oyk)
 
 *All experiments documented with visual examples in accompanying image files*
