@@ -1,3 +1,197 @@
-Step 1: What exactly is a JPG and how the heck does it work?
+# JPEG Glitch Art Exploration
+### Creative Coding Class Assignment
 
-https://www.freecodecamp.org/news/how-jpg-works-a4dbd2316f35/
+## Introduction
+
+This project explores databending and glitch art techniques through manual and systematic manipulation of JPEG file structures. The goal was to understand how JPEGs encode visual information and create intentional corruption for aesthetic effects.
+
+## Initial Research
+
+**Understanding JPEG Structure**
+- Studied how JPEG compression works through DCT (Discrete Cosine Transform)
+- Learned that JPEG files have a header section followed by image data
+- The boundary between header and data is marked by hex code `FF DA`
+- Editing the header corrupts the file beyond repair, so all manipulation must occur in the data section
+
+**Key Resources:**
+- [How JPG Works](https://www.freecodecamp.org/news/how-jpg-works-a4dbd2316f35/) - freeCodeCamp
+- [ComputerPhile: JPEG Explained](https://www.youtube.com/watch?v=Tq-Ly_Gz5ws)
+- [How to Glitch JPG Images](http://datamoshing.com/2016/06/15/how-to-glitch-jpg-images-with-data-corruption/)
+- [Graphic Design Stack Exchange Discussion](https://graphicdesign.stackexchange.com/questions/116532/is-there-any-method-to-deliberately-digitally-corrupt-an-image)
+
+**Artist Inspiration:**
+- [Faultlore Glitch Art](https://faultlore.com/glitch/)
+- [Data Erase](https://dataerase.neocities.org/about)
+- [Rosa Menkman's work](https://www.youtube.com/watch?v=fAxHlLK3Oyk)
+- [Beyond Resolution: MPEG Dear Mr. Compression](https://beyondresolution.info/MPEG-Dear-mr-Compression)
+- [Hito Steyerl - NY Times Feature](https://www.nytimes.com/2017/12/15/arts/design/hito-steyerl.html)
+- ["The Spam of the Earth" - e-flux](https://www.e-flux.com/journal/32/68260/the-spam-of-the-earth-withdrawal-from-representation)
+
+## Experimentation Process
+
+### Phase 1: Manual Hex Editing - Small Changes
+**Image:** Mountain cows photograph
+
+**Approach:** Small-scale hex code manipulation
+- Randomly copied and moved sections of hex code within the file
+- Tried inserting the hex representation of "luddites" in 8-bit sections
+- Replaced individual hex values systematically
+
+**Results:**
+- Horizontal streaks appeared across images
+- Most affected areas turned grey rather than producing the desired warp effect
+- Grey pixels indicated file corruption where JPEG couldn't compile properly
+- No clear pattern emerged for what caused corruption vs. interesting effects
+
+**Key Finding:** Smaller changes were less effective and harder to control
+
+### Phase 2: Larger Chunk Manipulation
+**Images:** mountains3.jpeg, mountains4.jpeg
+
+**Approach:** Moving larger blocks of hex data
+- Swapped substantial sections of the image data
+- Focused on moving recognizable chunks rather than small edits
+
+**Results:**
+- More successful than small changes
+- Created "split" appearance where sections of the image were recognizable but displaced
+- Still produced some grey corruption, but with more interesting visual results
+- Preferred aesthetic outcome compared to earlier attempts
+
+**Key Finding:** Larger manipulations yielded more controlled and visually interesting results
+
+### Phase 3: Attempted Automation
+**Approach:** Wrote scripts to parse image data and make systematic changes
+
+**Results:** Unsuccessful
+- Scripts broke files more often than manual editing
+- No consistent pattern emerged for what would work vs. corrupt
+- Abandoned systematic approach in favor of more intuitive manual manipulation
+
+### Phase 4: Testing Universality
+**Image:** Snowy mountains (January photograph)
+
+**Purpose:** Verify if effects were image-specific or technique-based
+
+**Results:**
+- Similar horizontal streaking effects as previous experiments
+- Confirmed that the glitch patterns were technique-driven, not image-dependent
+- Script automation still unsuccessful
+
+**Observation:** Different image viewers (Mac Preview vs. VSCode vs. GitHub) displayed glitched images completely differently
+
+### Phase 5: Working with DCT
+**Image:** Small-scale snow images
+
+**Approach:** Reduced image quality significantly to make DCT effects visible
+- Downsized pixels dramatically
+- Applied same pixel replacement method
+- Added hex value `20202020 20202020 206C6F76 65202020 20202020 20202020` (ASCII for "         love           ") frequently throughout file
+
+**Results:**
+- DCT effects became visible with larger pixels relative to image size
+- Created interesting abstractions
+- Still felt random and difficult to control
+
+**Challenge:** Process remained unpredictable despite theoretical understanding
+
+### Phase 6: Large-Scale Image Manipulation
+**Image:** 6400px × 6400px resized photograph
+
+**Initial Approach:** Random hex section movement
+- Started with familiar technique on much larger image
+- Expected different results due to pixel size
+
+**Problem:** Pixels greyed out constantly, affecting everything that followed
+
+**Breakthrough Discovery:** Random deletion
+- Out of frustration, began deleting random sections instead of moving them
+- Produced the most interesting effects yet
+- Image started to split and move in visually compelling ways
+- Learned that different bits controlled movement vs. color/luminance
+
+**Key Insight:** Deletion was more effective than movement for creating controlled glitch effects
+
+**Refinement Process:**
+- Carefully selected which values to delete (wrong deletions caused total grey-out)
+- Navigated through file methodically
+- Deleted, re-added, and shifted hex codes slightly right or left
+- Iterative process of honing specific effects
+
+### Phase 7: Systematic Bit Replacement
+**Image:** Hat photograph (hat copy.jpg series)
+
+**Approach:** Replaced nearly every instance of hex value `02` with `33`
+- Selected values that would create significant numerical change
+- Made changes one by one (painstaking process)
+- Skipped instances that would cause grey-out
+- Non-live hex editor required manual iteration
+
+**Results:**
+- Gained better understanding of how color is coded in JPEG files
+- Luminance and chrominance became visible as final abstraction products
+- Extremely abstracted visual output (perhaps too dramatic)
+- Process was exhausting and time-consuming
+
+**Note:** Would not recommend this approach to anyone due to tedium and hand strain from repetitive edits
+
+### Phase 8: Addition Method
+**Image:** Hat photograph (hat copy 4)
+
+**Approach:** Added bitwise representation of the word "ephemeral" randomly and frequently throughout file
+
+**Results:**
+- Dramatic color changes
+- Visual appearance varied significantly between VSCode and MacOS Preview
+- Different viewers continued to render glitched images in unique ways
+
+### Phase 9: Grid Decomposition Method
+**Image:** Lake sunset photograph
+
+**Process:**
+1. Divided original image into 20 smaller images using 5×4 grid
+2. Resized each grid cell to 32×32 pixels
+3. Located start of data file (hex code `FF DA`) in each piece
+4. Deleted 2 bytes from same location in each image (10 bytes after header end)
+5. Reassembled grid to create final composite
+
+**Results:**
+- Some cells showed no change at all
+- Others were completely corrupted
+- Inconsistent effects across identical manipulations highlighted unpredictability
+- Interesting aesthetic from combining corrupted and uncorrupted sections
+
+## Key Learnings
+
+1. **File Structure Matters:** Understanding JPEG architecture (header vs. data) is critical for controlled manipulation
+2. **Scale Effects:** Larger manipulations and larger images produce more interesting results than small tweaks
+3. **Deletion > Movement:** Removing data often creates better glitch aesthetics than moving or replacing it
+4. **Viewer Dependency:** Glitched images render completely differently across viewing platforms
+5. **Unpredictability:** No consistent pattern emerged for predicting corruption vs. aesthetic glitch
+6. **Manual > Automated:** Intuitive manual editing outperformed systematic scripted approaches
+7. **Luminance & Chrominance:** Different hex values control different visual properties (color, brightness, position)
+
+## Challenges & Frustrations
+
+- Grey pixel corruption was persistent and hard to avoid
+- Automation attempts failed to produce usable results
+- Manual bit-by-bit editing was physically exhausting
+- Unpredictable outcomes made it difficult to achieve specific aesthetic goals
+- Non-live hex editor slowed down iterative process significantly
+
+## Future Directions
+
+**Next Steps:**
+- Learn `ffmpeg` command line tool for image/video manipulation
+- Explore more systematic approaches now that manual intuition is developed
+- Investigate why different viewers render glitched images so differently
+- Experiment with video files using similar techniques
+- Develop more efficient workflows for manual manipulation
+
+## Conclusion
+
+This exploration revealed both the technical complexity and creative potential of JPEG glitch art. While systematic approaches proved challenging, manual manipulation developed intuition for how image data encodes visual information. The unpredictability of the medium became part of its aesthetic appeal, creating unexpected visual results that pushed beyond initial intentions.
+
+---
+
+*All experiments documented with visual examples in accompanying image files*
