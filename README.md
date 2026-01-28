@@ -50,6 +50,8 @@ I'm getting an idea of the size needed for successful manipulation. I tried word
 
 I wanted to see if the same horizontal line effects would happen for a different image than the mountains one I started with. I used a new image, this time of snowy mountains I took last January to see what the same process might look like.
 
+![snow](Phase_2/snow2.jpeg)
+
 It did have a similar effect as earlier, streaking the image horizontally (see snow2.jpeg). I again tried using a script to automate the process, with no success. I figured that if I could manually figure out how to make one image look the way I wanted, I could then automate later.
 
 ## Working with DCT and smaller images
@@ -58,12 +60,13 @@ I'd been reading about Direct Cosine Transformations (DCTs), and since I couldn'
 
 **small-snow-1.jpeg:** I did a similar pixel replacement method, and was pleased to see the effects of the DCT when the pixels were so much larger in comparison to the whole image.
 
-![snow](Phase_2/small-snow 1.jpeg)
+![snow](Phase_2/small-snow1.jpeg)
 **small-snow-2.jpg:** I added to the size of the file by randomly frequently adding the hex value `20202020 20202020 206C6F76 65202020 20202020 20202020`, which looks like "         love           " in ASCII (the spaces to help me find my edits easier).
 
 While I liked the look of both abstractions, it felt like it was still random and hard to control.
 
-Phase_2/small-snow 2.jpeg
+![snow](Phase_2/small-snow2.jpeg)
+
 
 ## Going bigger: The 6400px experiment
 
@@ -76,10 +79,20 @@ The pixels seemed to grey out all the time, and grey everything that followed it
 ## The deletion breakthrough
 
 Frustrated, I just started deleting at random sections of the image. This ended up leading to the most interesting effect yet! The image started to split and move in a way I liked, and it became clear that some bits moved the image, while others changed its coloring or luminance. It still was finicky — if I deleted the wrong values, the image would go completely grey again, so I had to carefully pick my way through the file. See hat copy.jpg.
+![hat](Phase_3/hatcopy.jpg)
 
 To see what just a singular deletion of a bit might look like, check out hat copy - singular deletion.jpeg.
 
+![hat](Phase_3/hat_copy_singular_deletion.png)
+
 In the next iteration, I honed in more on specific bits to get the color and movement effect to my liking, often deleting then re-adding, moving a few hex codes to the right or left of the area I was working on, and then continuing again. Documented in hat copy 2.jpg.
+
+![hat](Phase_3/hatcopy2.jpg)
+
+![hat](Phase_3/hatcopy4-Mac.png)
+
+![hat](Phase_3/hatcopy4-VSCode.png)
+
 
 ## The painful bit replacement experiment
 
@@ -87,19 +100,27 @@ In one of the tutorials I watched, the artist recommended making a minor change 
 
 Indeed they were! Not every `02` is replaced though — some of them would just immediately cause the rest of the file to grey out, so I would not change that particular instance and then move to the next one. This was incredibly painstaking given that my hex editor was not a live editor, so I one by one made the changes.
 
+
 **I would really not recommend this to anyone, not even my worst enemy.** And now I think I have a twitch in my hand from doing this.
 
 I do think I have a better understanding of how color is coded into JPEG files with this experiment, as luminance and chrominance seem to be the final product of the abstraction. I included screenshots (4a and 4b) that show different changes of what the image looked like at different stages in the process.
 
 Unfortunately, I think the process of changing these bits, or maybe my choice in replacement was too dramatic, because the visual came out extremely abstracted. I'd like to explore that more, but the process was a slog and I haven't worked up the courage for Round Two.
 
+![snow](Phase_3/hat_copy-4a.png)
+![snow](Phase_3/hat_copy-4b.png)
+
 ## Addition method: "ephemeral"
 
 Now that I had tried deletion and replacement, I wanted to try addition with the same image. See: hat copy 4. Using the bitwise representation of the word "ephemeral," I randomly and frequently added to the file. The color look changes drastically between VSCode photo viewer and MacOS's Preview.
 
+![hat](Phase_3/hatcopy3.jpg)
+
 ## Grid decomposition experiment
 
 The next thing that I did was working within smaller jpgs. So I took an image I took of a lake sunset, divided it into 20 smaller images using a 5 by 4 grid. Then I sized each of the gridded images to be 32 by 32 pixels.
+
+![snow](Phase_4/combined-lake.png)
 
 **Process:**
 1. Located the start of the data file (end of the header) with the hex code `FF DA`
