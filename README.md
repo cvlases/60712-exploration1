@@ -24,6 +24,8 @@ I started experimenting with a film photo from this past summer of some cows res
 
 **mountains1.jpeg:** I somewhat randomly copied sections of hex code and moved it to other places in the file. The effect was some horizontal streaks across the image, often becoming grey, rather than the warping/glitching effect I was hoping for.
 
+![Mountains](Phase 1/mountains1.jpeg)
+
 **mountains2.jpeg:** I tried editing smaller segments of hex code more often, replacing 8-bit sections with the hex code of the word "luddites." This led to a similar horizontal streak effect. Some of the streaks looked like an interesting image translation, but most were greyed out color blocks. I read that the greyed pixels meant that there was some sort of corruption that led to the JPEG not being able to compile at all. I looked to see if there was a certain hex code that caused the issue or a placement, but it felt random.
 
 **mountains3.jpeg and mountains4.jpeg:** I tried moving larger chunks of the hex file to different places. This worked better than the smaller changes! While there was still some grey, the swapping of sections of image were somewhat recognizable. It gives the appearance of the image being "split." I prefer the larger chunks (like mountains 4).
