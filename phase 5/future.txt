@@ -1,1 +1,6 @@
-In the future, I want to 
+In the future, I want to...
+- Learn `ffmpeg` command line tool for image/video manipulation
+- Explore more systematic approaches now that manual intuition is developed
+- Investigate why different viewers render glitched images so differently
+- Experiment with video files using similar techniques
+- Develop more efficient workflows for manual manipulation

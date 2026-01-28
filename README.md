@@ -1,196 +1,116 @@
 # JPEG Glitch Art Exploration
 ### Creative Coding Class Assignment
 
-## Introduction
+## Starting Point: What exactly is a JPG and how the heck does it work?
 
-This project explores databending and glitch art techniques through manual and systematic manipulation of JPEG file structures. The goal was to understand how JPEGs encode visual information and create intentional corruption for aesthetic effects.
+I started by trying to understand the basics of JPEG structure through [this freeCodeCamp article](https://www.freecodecamp.org/news/how-jpg-works-a4dbd2316f35/). The key thing I learned: JPEGs have a header section and a data section, separated by the hex code `FF DA`. Editing the header = totally corrupting the file. All the fun happens in the data section.
 
-## Initial Research
+**Resources I used:**
+- [ComputerPhile: How JPEG works](https://www.youtube.com/watch?v=Tq-Ly_Gz5ws)
+- [Stack Exchange: Methods to deliberately corrupt images](https://graphicdesign.stackexchange.com/questions/116532/is-there-any-method-to-deliberately-digitally-corrupt-an-image)
+- [Data Moshing tutorial](http://datamoshing.com/2016/06/15/how-to-glitch-jpg-images-with-data-corruption/)
 
-**Understanding JPEG Structure**
-- Studied how JPEG compression works through DCT (Discrete Cosine Transform)
-- Learned that JPEG files have a header section followed by image data
-- The boundary between header and data is marked by hex code `FF DA`
-- Editing the header corrupts the file beyond repair, so all manipulation must occur in the data section
-
-**Key Resources:**
-- [How JPG Works](https://www.freecodecamp.org/news/how-jpg-works-a4dbd2316f35/) - freeCodeCamp
-- [ComputerPhile: JPEG Explained](https://www.youtube.com/watch?v=Tq-Ly_Gz5ws)
-- [How to Glitch JPG Images](http://datamoshing.com/2016/06/15/how-to-glitch-jpg-images-with-data-corruption/)
-- [Graphic Design Stack Exchange Discussion](https://graphicdesign.stackexchange.com/questions/116532/is-there-any-method-to-deliberately-digitally-corrupt-an-image)
-
-**Artist Inspiration:**
-- [Faultlore Glitch Art](https://faultlore.com/glitch/)
+**Artist inspiration:**
+- [Faultlore](https://faultlore.com/glitch/)
 - [Data Erase](https://dataerase.neocities.org/about)
-- [Rosa Menkman's work](https://www.youtube.com/watch?v=fAxHlLK3Oyk)
+- [Rosa Menkman](https://www.youtube.com/watch?v=fAxHlLK3Oyk)
 - [Beyond Resolution: MPEG Dear Mr. Compression](https://beyondresolution.info/MPEG-Dear-mr-Compression)
-- [Hito Steyerl - NY Times Feature](https://www.nytimes.com/2017/12/15/arts/design/hito-steyerl.html)
-- ["The Spam of the Earth" - e-flux](https://www.e-flux.com/journal/32/68260/the-spam-of-the-earth-withdrawal-from-representation)
+- [Hito Steyerl - NY Times](https://www.nytimes.com/2017/12/15/arts/design/hito-steyerl.html)
+- [The Spam of the Earth - e-flux](https://www.e-flux.com/journal/32/68260/the-spam-of-the-earth-withdrawal-from-representation)
 
-## Experimentation Process
+## Beginning to work in the hex editor
 
-### Phase 1: Manual Hex Editing - Small Changes
-**Image:** Mountain cows photograph
+I started experimenting with a film photo from this past summer of some cows resting in the mountains. There are only a few places to edit within the header without totally corrupting the file, and I haven't quite figured that out yet. Within the body, I've been adjusting a mix of large blocks of hex data and moving it to different places in the image, hoping to get a sort of glitch effect.
 
-**Approach:** Small-scale hex code manipulation
-- Randomly copied and moved sections of hex code within the file
-- Tried inserting the hex representation of "luddites" in 8-bit sections
-- Replaced individual hex values systematically
+**mountains1.jpeg:** I somewhat randomly copied sections of hex code and moved it to other places in the file. The effect was some horizontal streaks across the image, often becoming grey, rather than the warping/glitching effect I was hoping for.
 
-**Results:**
-- Horizontal streaks appeared across images
-- Most affected areas turned grey rather than producing the desired warp effect
-- Grey pixels indicated file corruption where JPEG couldn't compile properly
-- No clear pattern emerged for what caused corruption vs. interesting effects
+**mountains2.jpeg:** I tried editing smaller segments of hex code more often, replacing 8-bit sections with the hex code of the word "luddites." This led to a similar horizontal streak effect. Some of the streaks looked like an interesting image translation, but most were greyed out color blocks. I read that the greyed pixels meant that there was some sort of corruption that led to the JPEG not being able to compile at all. I looked to see if there was a certain hex code that caused the issue or a placement, but it felt random.
 
-**Key Finding:** Smaller changes were less effective and harder to control
+**mountains3.jpeg and mountains4.jpeg:** I tried moving larger chunks of the hex file to different places. This worked better than the smaller changes! While there was still some grey, the swapping of sections of image were somewhat recognizable. It gives the appearance of the image being "split." I prefer the larger chunks (like mountains 4).
 
-### Phase 2: Larger Chunk Manipulation
-**Images:** mountains3.jpeg, mountains4.jpeg
+This may be harder than I thought! I'm disappointed in the amount of grey, and have to figure out why that is happening. I've read all about DCT, but haven't really incorporated the mathematics into this initial exploration just yet.
 
-**Approach:** Moving larger blocks of hex data
-- Swapped substantial sections of the image data
-- Focused on moving recognizable chunks rather than small edits
+**Interesting aside:** The images display differently on my computer vs here on GitHub. What the heck is going on here?! I looked into this a little, and it appears that a lot of angry people on Reddit think little of Mac's Preview.
 
-**Results:**
-- More successful than small changes
-- Created "split" appearance where sections of the image were recognizable but displaced
-- Still produced some grey corruption, but with more interesting visual results
-- Preferred aesthetic outcome compared to earlier attempts
+## Trying to automate the process (spoiler: it didn't work)
 
-**Key Finding:** Larger manipulations yielded more controlled and visually interesting results
+In later iterations, I attempted to add some pattern and consistency to the process by writing a few short scripts to parse the image data and make changes after a set number of hex codes. Unfortunately, like I experienced with the manual process, there didn't seem to be a noticeable pattern to what broke the file or turned the pixels grey. Trying to use the consistent looping pattern only seemed to break my files.
 
-### Phase 3: Attempted Automation
-**Approach:** Wrote scripts to parse image data and make systematic changes
+I'm getting an idea of the size needed for successful manipulation. I tried word insertion, but so far the difference isn't noticeable (maybe I'll need to write a script for these additions en masse?).
 
-**Results:** Unsuccessful
-- Scripts broke files more often than manual editing
-- No consistent pattern emerged for what would work vs. corrupt
-- Abandoned systematic approach in favor of more intuitive manual manipulation
+## Testing with a different image
 
-### Phase 4: Testing Universality
-**Image:** Snowy mountains (January photograph)
+I wanted to see if the same horizontal line effects would happen for a different image than the mountains one I started with. I used a new image, this time of snowy mountains I took last January to see what the same process might look like.
 
-**Purpose:** Verify if effects were image-specific or technique-based
+It did have a similar effect as earlier, streaking the image horizontally (see snow2.jpeg). I again tried using a script to automate the process, with no success. I figured that if I could manually figure out how to make one image look the way I wanted, I could then automate later.
 
-**Results:**
-- Similar horizontal streaking effects as previous experiments
-- Confirmed that the glitch patterns were technique-driven, not image-dependent
-- Script automation still unsuccessful
+## Working with DCT and smaller images
 
-**Observation:** Different image viewers (Mac Preview vs. VSCode vs. GitHub) displayed glitched images completely differently
+I'd been reading about Direct Cosine Transformations (DCTs), and since I couldn't seem to reason out a pattern to the madness, I sized the image quality down significantly, reducing its number of pixels.
 
-### Phase 5: Working with DCT
-**Image:** Small-scale snow images
+**small-snow-1.jpeg:** I did a similar pixel replacement method, and was pleased to see the effects of the DCT when the pixels were so much larger in comparison to the whole image.
 
-**Approach:** Reduced image quality significantly to make DCT effects visible
-- Downsized pixels dramatically
-- Applied same pixel replacement method
-- Added hex value `20202020 20202020 206C6F76 65202020 20202020 20202020` (ASCII for "         love           ") frequently throughout file
+**small-snow-2.jpg:** I added to the size of the file by randomly frequently adding the hex value `20202020 20202020 206C6F76 65202020 20202020 20202020`, which looks like "         love           " in ASCII (the spaces to help me find my edits easier).
 
-**Results:**
-- DCT effects became visible with larger pixels relative to image size
-- Created interesting abstractions
-- Still felt random and difficult to control
+While I liked the look of both abstractions, it felt like it was still random and hard to control.
 
-**Challenge:** Process remained unpredictable despite theoretical understanding
+## Going bigger: The 6400px experiment
 
-### Phase 6: Large-Scale Image Manipulation
-**Image:** 6400px × 6400px resized photograph
+I went back to the drawing board and read a lot from other glitch artists. In one YouTube tutorial, I learned that the horizontal streak effect often occurs because the image isn't big enough. With really large images (and thus super tiny pixels), the effects appear really different. I didn't have any images the size the video suggested, so I attempted to size up an image I already had that was pretty big.
 
-**Initial Approach:** Random hex section movement
-- Started with familiar technique on much larger image
-- Expected different results due to pixel size
+Now with a resized, large 6400px × 6400px image, I started following my (now customary) practice of randomly moving about sections of the hex file within the image.
 
-**Problem:** Pixels greyed out constantly, affecting everything that followed
+The pixels seemed to grey out all the time, and grey everything that followed it. This seemed like going backwards!
 
-**Breakthrough Discovery:** Random deletion
-- Out of frustration, began deleting random sections instead of moving them
-- Produced the most interesting effects yet
-- Image started to split and move in visually compelling ways
-- Learned that different bits controlled movement vs. color/luminance
+## The deletion breakthrough
 
-**Key Insight:** Deletion was more effective than movement for creating controlled glitch effects
+Frustrated, I just started deleting at random sections of the image. This ended up leading to the most interesting effect yet! The image started to split and move in a way I liked, and it became clear that some bits moved the image, while others changed its coloring or luminance. It still was finicky — if I deleted the wrong values, the image would go completely grey again, so I had to carefully pick my way through the file. See hat copy.jpg.
 
-**Refinement Process:**
-- Carefully selected which values to delete (wrong deletions caused total grey-out)
-- Navigated through file methodically
-- Deleted, re-added, and shifted hex codes slightly right or left
-- Iterative process of honing specific effects
+To see what just a singular deletion of a bit might look like, check out hat copy - singular deletion.jpeg.
 
-### Phase 7: Systematic Bit Replacement
-**Image:** Hat photograph (hat copy.jpg series)
+In the next iteration, I honed in more on specific bits to get the color and movement effect to my liking, often deleting then re-adding, moving a few hex codes to the right or left of the area I was working on, and then continuing again. Documented in hat copy 2.jpg.
 
-**Approach:** Replaced nearly every instance of hex value `02` with `33`
-- Selected values that would create significant numerical change
-- Made changes one by one (painstaking process)
-- Skipped instances that would cause grey-out
-- Non-live hex editor required manual iteration
+## The painful bit replacement experiment
 
-**Results:**
-- Gained better understanding of how color is coded in JPEG files
-- Luminance and chrominance became visible as final abstraction products
-- Extremely abstracted visual output (perhaps too dramatic)
-- Process was exhausting and time-consuming
+In one of the tutorials I watched, the artist recommended making a minor change to the same bit over and over. At random, I picked `02` and replaced nearly every hex with `33` instead. I figured that would be a significant enough numerical change that the effects would be noticeable.
 
-**Note:** Would not recommend this approach to anyone due to tedium and hand strain from repetitive edits
+Indeed they were! Not every `02` is replaced though — some of them would just immediately cause the rest of the file to grey out, so I would not change that particular instance and then move to the next one. This was incredibly painstaking given that my hex editor was not a live editor, so I one by one made the changes.
 
-### Phase 8: Addition Method
-**Image:** Hat photograph (hat copy 4)
+**I would really not recommend this to anyone, not even my worst enemy.** And now I think I have a twitch in my hand from doing this.
 
-**Approach:** Added bitwise representation of the word "ephemeral" randomly and frequently throughout file
+I do think I have a better understanding of how color is coded into JPEG files with this experiment, as luminance and chrominance seem to be the final product of the abstraction. I included screenshots (4a and 4b) that show different changes of what the image looked like at different stages in the process.
 
-**Results:**
-- Dramatic color changes
-- Visual appearance varied significantly between VSCode and MacOS Preview
-- Different viewers continued to render glitched images in unique ways
+Unfortunately, I think the process of changing these bits, or maybe my choice in replacement was too dramatic, because the visual came out extremely abstracted. I'd like to explore that more, but the process was a slog and I haven't worked up the courage for Round Two.
 
-### Phase 9: Grid Decomposition Method
-**Image:** Lake sunset photograph
+## Addition method: "ephemeral"
+
+Now that I had tried deletion and replacement, I wanted to try addition with the same image. See: hat copy 4. Using the bitwise representation of the word "ephemeral," I randomly and frequently added to the file. The color look changes drastically between VSCode photo viewer and MacOS's Preview.
+
+## Grid decomposition experiment
+
+The next thing that I did was working within smaller jpgs. So I took an image I took of a lake sunset, divided it into 20 smaller images using a 5 by 4 grid. Then I sized each of the gridded images to be 32 by 32 pixels.
 
 **Process:**
-1. Divided original image into 20 smaller images using 5×4 grid
-2. Resized each grid cell to 32×32 pixels
-3. Located start of data file (hex code `FF DA`) in each piece
-4. Deleted 2 bytes from same location in each image (10 bytes after header end)
-5. Reassembled grid to create final composite
+1. Located the start of the data file (end of the header) with the hex code `FF DA`
+2. Deleted 2 bytes from the same place in each image (10 bytes after the end of the header)
+3. Replaced the images back on the grid to get a final product
 
-**Results:**
-- Some cells showed no change at all
-- Others were completely corrupted
-- Inconsistent effects across identical manipulations highlighted unpredictability
-- Interesting aesthetic from combining corrupted and uncorrupted sections
+It was interesting that some didn't change at all and others were totally corrupted.
 
-## Key Learnings
+## What's next
 
-1. **File Structure Matters:** Understanding JPEG architecture (header vs. data) is critical for controlled manipulation
-2. **Scale Effects:** Larger manipulations and larger images produce more interesting results than small tweaks
-3. **Deletion > Movement:** Removing data often creates better glitch aesthetics than moving or replacing it
-4. **Viewer Dependency:** Glitched images render completely differently across viewing platforms
-5. **Unpredictability:** No consistent pattern emerged for predicting corruption vs. aesthetic glitch
-6. **Manual > Automated:** Intuitive manual editing outperformed systematic scripted approaches
-7. **Luminance & Chrominance:** Different hex values control different visual properties (color, brightness, position)
+Future work: I want to learn the `ffmpeg` tool. This is a powerful command line tool for image/video manipulation.
 
-## Challenges & Frustrations
+## Key Takeaways
 
-- Grey pixel corruption was persistent and hard to avoid
-- Automation attempts failed to produce usable results
-- Manual bit-by-bit editing was physically exhausting
-- Unpredictable outcomes made it difficult to achieve specific aesthetic goals
-- Non-live hex editor slowed down iterative process significantly
-
-## Future Directions
-
-**Next Steps:**
-- Learn `ffmpeg` command line tool for image/video manipulation
-- Explore more systematic approaches now that manual intuition is developed
-- Investigate why different viewers render glitched images so differently
-- Experiment with video files using similar techniques
-- Develop more efficient workflows for manual manipulation
-
-## Conclusion
-
-This exploration revealed both the technical complexity and creative potential of JPEG glitch art. While systematic approaches proved challenging, manual manipulation developed intuition for how image data encodes visual information. The unpredictability of the medium became part of its aesthetic appeal, creating unexpected visual results that pushed beyond initial intentions.
+- **Larger chunks work better** than small edits for creating interesting glitch effects
+- **Deletion is more effective** than movement or replacement for controlled manipulation
+- **Different viewers render glitched images completely differently** (Mac Preview vs VSCode vs GitHub)
+- **Automation didn't work** — manual intuition was more successful than systematic scripts
+- **Grey pixels = corruption** where the JPEG can't compile properly
+- **No consistent pattern** emerged for what would corrupt vs. create aesthetic glitches
+- **DCT effects are visible** when pixels are large relative to image size
+- **Some bits control movement, others control color/luminance**
 
 ---
 
