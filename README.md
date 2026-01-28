@@ -1,24 +1,29 @@
-# JPEG Glitch Art Exploration
+# Getting Glitchy Wid It
+My JPEG Glitch Art Exploration
 ### Creative Coding Exploration 1
 
 ![hex](words.png)
 
+## What is it? 
+In this project, I manually manipulated JPEG file structures at the hex level to create intentional visual corruption of some of the pictures I've taken recently, exploring how digital images encode information and investigating databending as an aesthetic practice, and the tension between digital and analog representation.
+
+## Motivation
+I created this as commentary on analog versus digital—taking film photographs of mountains, snow, water, and cowboy/western scenes that represent traditional human connections to nature, then deliberately corrupting them with digital processes. I was curious about what happens when you layer digital failure onto analog nostalgia, and whether the corruption reveals something about how digital systems translate (or betray) physical reality.
+
+## Inspiration
+My primary inspirations came from the glitch art community, particularly:
+
+Rosa Menkman - Her work on [compression artifacts](https://www.youtube.com/watch?v=fAxHlLK3Oyk) and the "Glitch Moment/um" showed me how technical failures can become aesthetic choices
+Hito Steyerl - Her video installations dealing with [image degradation and circulation](https://www.nytimes.com/2017/12/15/arts/design/hito-steyerl.html) influenced my thinking about digital materiality
+Data Erase - Their [systematic approach to databending](https://dataerase.neocities.org/about) demonstrated methodical exploration of corruption techniques
+Faultlore - [Documentation of glitch techniques](https://faultlore.com/glitch/) provided practical starting points
+Beyond Resolution collective - Their project ["MPEG Dear Mr. Compression"](https://beyondresolution.info/MPEG-Dear-mr-Compression) reframed compression as a creative constraint
+
+I also drew on e-flux's essay ["The Spam of the Earth"](https://www.e-flux.com/journal/32/68260/the-spam-of-the-earth-withdrawal-from-representation) for conceptual framing around digital representation and withdrawal.
+
 ## Starting Point: What exactly is a JPG and how the heck does it work?
 
 I started by trying to understand the basics of JPEG structure through [this freeCodeCamp article](https://www.freecodecamp.org/news/how-jpg-works-a4dbd2316f35/). The key thing I learned: JPEGs have a header section and a data section, separated by the hex code `FF DA`. Editing the header = totally corrupting the file. All the fun happens in the data section.
-
-**Resources I used:**
-- [ComputerPhile: How JPEG works](https://www.youtube.com/watch?v=Tq-Ly_Gz5ws)
-- [Stack Exchange: Methods to deliberately corrupt images](https://graphicdesign.stackexchange.com/questions/116532/is-there-any-method-to-deliberately-digitally-corrupt-an-image)
-- [Data Moshing tutorial](http://datamoshing.com/2016/06/15/how-to-glitch-jpg-images-with-data-corruption/)
-
-**Artist inspiration:**
-- [Faultlore](https://faultlore.com/glitch/)
-- [Data Erase](https://dataerase.neocities.org/about)
-- [Rosa Menkman](https://www.youtube.com/watch?v=fAxHlLK3Oyk)
-- [Beyond Resolution: MPEG Dear Mr. Compression](https://beyondresolution.info/MPEG-Dear-mr-Compression)
-- [Hito Steyerl - NY Times](https://www.nytimes.com/2017/12/15/arts/design/hito-steyerl.html)
-- [The Spam of the Earth - e-flux](https://www.e-flux.com/journal/32/68260/the-spam-of-the-earth-withdrawal-from-representation)
 
 ## Beginning to work in the hex editor
 
@@ -146,6 +151,20 @@ Future work: I want to learn the `ffmpeg` tool. This is a powerful command line 
 - **DCT effects are visible** when pixels are large relative to image size
 - **Some bits control movement, others control color/luminance**
 
+## Acknowledgments
+
+**Thank you to the creators of these resources for explanations!:**
+- [ComputerPhile: How JPEG works](https://www.youtube.com/watch?v=Tq-Ly_Gz5ws)
+- [Stack Exchange: Methods to deliberately corrupt images](https://graphicdesign.stackexchange.com/questions/116532/is-there-any-method-to-deliberately-digitally-corrupt-an-image)
+- [Data Moshing tutorial](http://datamoshing.com/2016/06/15/how-to-glitch-jpg-images-with-data-corruption/)
+
+**And thank you for the artitsts that inspired my exploratoion. I am even more in awe of your creations now.**
+- [Faultlore](https://faultlore.com/glitch/)
+- [Data Erase](https://dataerase.neocities.org/about)
+- [Rosa Menkman](https://www.youtube.com/watch?v=fAxHlLK3Oyk)
+- [Beyond Resolution: MPEG Dear Mr. Compression](https://beyondresolution.info/MPEG-Dear-mr-Compression)
+- [Hito Steyerl - NY Times](https://www.nytimes.com/2017/12/15/arts/design/hito-steyerl.html)
+- [The Spam of the Earth - e-flux](https://www.e-flux.com/journal/32/68260/the-spam-of-the-earth-withdrawal-from-representation)
 ---
 
 *All experiments documented with visual examples in accompanying image files*
