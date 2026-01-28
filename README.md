@@ -24,11 +24,17 @@ I started experimenting with a film photo from this past summer of some cows res
 
 **mountains1.jpeg:** I somewhat randomly copied sections of hex code and moved it to other places in the file. The effect was some horizontal streaks across the image, often becoming grey, rather than the warping/glitching effect I was hoping for.
 
-![Mountains](Phase_1/mountains1.jpeg)
+![Mountains1](Phase_1/mountains1.jpeg)
 
 **mountains2.jpeg:** I tried editing smaller segments of hex code more often, replacing 8-bit sections with the hex code of the word "luddites." This led to a similar horizontal streak effect. Some of the streaks looked like an interesting image translation, but most were greyed out color blocks. I read that the greyed pixels meant that there was some sort of corruption that led to the JPEG not being able to compile at all. I looked to see if there was a certain hex code that caused the issue or a placement, but it felt random.
 
+![Mountains1](Phase_1/mountains2.jpeg)
+
 **mountains3.jpeg and mountains4.jpeg:** I tried moving larger chunks of the hex file to different places. This worked better than the smaller changes! While there was still some grey, the swapping of sections of image were somewhat recognizable. It gives the appearance of the image being "split." I prefer the larger chunks (like mountains 4).
+
+![Mountains1](Phase_1/mountains3.jpeg)
+
+![Mountains1](Phase_1/mountains4.jpeg)
 
 This may be harder than I thought! I'm disappointed in the amount of grey, and have to figure out why that is happening. I've read all about DCT, but haven't really incorporated the mathematics into this initial exploration just yet.
 
@@ -52,9 +58,12 @@ I'd been reading about Direct Cosine Transformations (DCTs), and since I couldn'
 
 **small-snow-1.jpeg:** I did a similar pixel replacement method, and was pleased to see the effects of the DCT when the pixels were so much larger in comparison to the whole image.
 
+![snow](Phase_2/small-snow 1.jpeg)
 **small-snow-2.jpg:** I added to the size of the file by randomly frequently adding the hex value `20202020 20202020 206C6F76 65202020 20202020 20202020`, which looks like "         love           " in ASCII (the spaces to help me find my edits easier).
 
 While I liked the look of both abstractions, it felt like it was still random and hard to control.
+
+Phase_2/small-snow 2.jpeg
 
 ## Going bigger: The 6400px experiment
 
