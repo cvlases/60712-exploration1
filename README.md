@@ -154,12 +154,12 @@ Future work: I want to learn the `ffmpeg` tool. This is a powerful command line 
 
 ## Acknowledgments
 
-**Thank you to the creators of these resources for explanations!:**
+**Thank you to the creators of these resources for explanations!**
 - [ComputerPhile: How JPEG works](https://www.youtube.com/watch?v=Tq-Ly_Gz5ws)
 - [Stack Exchange: Methods to deliberately corrupt images](https://graphicdesign.stackexchange.com/questions/116532/is-there-any-method-to-deliberately-digitally-corrupt-an-image)
 - [Data Moshing tutorial](http://datamoshing.com/2016/06/15/how-to-glitch-jpg-images-with-data-corruption/)
 
-**And thank you for the artitsts that inspired my exploratoion. I am even more in awe of your creations now.**
+**And thank you for the artitsts that inspired my exploration. I am even more in awe of your creations now.**
 - [Faultlore](https://faultlore.com/glitch/)
 - [Data Erase](https://dataerase.neocities.org/about)
 - [Rosa Menkman](https://www.youtube.com/watch?v=fAxHlLK3Oyk)
