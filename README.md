@@ -68,6 +68,7 @@ I'd been reading about Direct Cosine Transformations (DCTs), and since I couldn'
 **small-snow-1.jpeg:** I did a similar pixel replacement method, and was pleased to see the effects of the DCT when the pixels were so much larger in comparison to the whole image.
 
 ![snow](Phase_2/small-snow1.jpeg)
+
 **small-snow-2.jpg:** I added to the size of the file by randomly frequently adding the hex value `20202020 20202020 206C6F76 65202020 20202020 20202020`, which looks like "         love           " in ASCII (the spaces to help me find my edits easier).
 
 While I liked the look of both abstractions, it felt like it was still random and hard to control.
