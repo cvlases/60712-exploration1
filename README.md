@@ -1,5 +1,7 @@
 # JPEG Glitch Art Exploration
-### Creative Coding Class Assignment
+### Creative Coding Exploration 1
+
+![hex](words.png)
 
 ## Starting Point: What exactly is a JPG and how the heck does it work?
 
