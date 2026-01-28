@@ -19,7 +19,11 @@ Data Erase - Their [systematic approach to databending](https://dataerase.neocit
 Faultlore - [Documentation of glitch techniques](https://faultlore.com/glitch/) provided practical starting points
 Beyond Resolution collective - Their project ["MPEG Dear Mr. Compression"](https://beyondresolution.info/MPEG-Dear-mr-Compression) reframed compression as a creative constraint
 
-I also drew on e-flux's essay ["The Spam of the Earth"](https://www.e-flux.com/journal/32/68260/the-spam-of-the-earth-withdrawal-from-representation) for conceptual framing around digital representation and withdrawal.
+I drew on e-flux's essay ["The Spam of the Earth"](https://www.e-flux.com/journal/32/68260/the-spam-of-the-earth-withdrawal-from-representation) for conceptual framing around digital representation and withdrawal.
+
+I was also inspired by Alvin Lucier's ["I am sitting in a room"](https://www.youtube.com/watch?v=fAxHlLK3Oyk), in which he records and re-records a loop of audio, and it becomes more and more corrupted and warped. I would seriously recommend sitting in a room and listening to the whole 45 minutes. 
+
+![room](in-room.png)
 
 ## Starting Point: What exactly is a JPG and how the heck does it work?
 
