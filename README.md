@@ -123,6 +123,8 @@ Midway through:
 
 Unfortunately, I think the process of changing these bits, or maybe my choice in replacement was too dramatic, because the visual came out extremely abstracted. I'd like to explore that more, but the process was a slog and I haven't worked up the courage for Round Two.
 
+
+The final effect:
 ![hat](Phase_3/hatcopy3.jpg)
 
 
