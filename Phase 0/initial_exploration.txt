@@ -1,4 +1,8 @@
-Beginning to work in the hex editor.
+Step 1: What exactly is a JPG and how the heck does it work?
+
+https://www.freecodecamp.org/news/how-jpg-works-a4dbd2316f35/
+
+Step 2: Beginning to work in the hex editor.
 
 There are only a few places to edit within the header without totally corrupting the file, and I haven't quite figured that out yet. 
 
